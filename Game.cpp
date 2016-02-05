@@ -19,11 +19,12 @@ Game::~Game()
   SDL_DestroyWindow(window_);
 }
 
-void Game::setup(const char* title, int xPos, int yPos, int width, int height, int flags)
+bool Game::setup(const char* title, int xPos, int yPos, int width, int height, int flags)
 {
   if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
   {
     printf("SDL could not initialize");
+    return false;
   }
   else
   {
@@ -38,6 +39,7 @@ void Game::setup(const char* title, int xPos, int yPos, int width, int height, i
     if (window_ == NULL)
     {
       printf("SDL Window not initialized");
+      return false;
     }
     else
     {
@@ -45,6 +47,7 @@ void Game::setup(const char* title, int xPos, int yPos, int width, int height, i
       if (renderer_ == NULL)
       {
         printf("SDL Renderer not initialized");
+        return false;
       }
 
       //test code pls delete
@@ -52,15 +55,25 @@ void Game::setup(const char* title, int xPos, int yPos, int width, int height, i
       {
         SDL_SetRenderDrawColor(renderer_, 255,255,255,255);
         running_ = true;
-        SDL_Delay(5000);
-        running_ = false;
+        return true;
       }
     }
   }
 }
 void Game::handleInput()
 {
-
+  SDL_Event event;
+  if (SDL_PollEvent(&event))
+  {
+    switch(event.type)
+    {
+      case SDL_QUIT:
+        running_ = false;
+        break;
+      default:
+        break;
+    }
+  }
 }
 
 void Game::update()
@@ -69,7 +82,8 @@ void Game::update()
 }
 void Game::draw()
 {
-
+  SDL_RenderClear(renderer_);
+  SDL_RenderPresent(renderer_);
 }
 
 void Game::clean()

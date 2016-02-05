@@ -8,12 +8,18 @@ const int SCREEN_HEIGHT  = 480;
 int main (int argc, char* argv[])
 {
   Game* theGame = new Game();
-  theGame->setup("Open Space", 100,100,640,480,0);
-  while (theGame->isRunning())
+  if(theGame->setup("Open Space", 100,100,SCREEN_WIDTH,SCREEN_HEIGHT,0))
   {
-    theGame->handleInput();
-    theGame->update();
-    theGame->draw();
+    while (theGame->isRunning())
+    {
+      theGame->handleInput();
+      theGame->update();
+      theGame->draw();
+    }
+  }
+  else
+  {
+    return 1;
   }
 
   delete theGame;

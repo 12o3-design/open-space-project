@@ -9,7 +9,7 @@ public:
   Game();
   ~Game();
 
-  void setup(const char* title, int xPos, int yPos, int width, int height, int flags);
+  bool setup(const char* title, int xPos, int yPos, int width, int height, int flags);
   void handleInput();
   void update();
   void draw();
