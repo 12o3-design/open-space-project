@@ -16,24 +16,6 @@ Renderer::~Renderer()
   inst_ = false;
 }
 
-SDL_Texture* Renderer::GetTexture(int TextureID)
-{
-  // searches array for texture ID
-  if (TextureID < size_)
-  {
-    // ensure the texture is not null
-    if (textures_[TextureID] != NULL)
-    {
-      return texture_[TextureID];
-    }
-  }
-  // if texture not found or outside bounds, return null
-  else
-  {
-    return NULL;
-  }
-}
-
 int Renderer::AddTexture(SDL_Texture* texture)
 {
   // walks array, inserts texture at first empty slot.
@@ -46,10 +28,21 @@ int Renderer::AddTexture(SDL_Texture* texture)
       return i;
     }
   }
-  return -1;
+  return UNABLE_TO_ADD;
 }
 
 int Renderer::load(char* texName)
 {
-  
+  SDL_Surface* tempSurface = IMG_Load(texName.c_str());
+  if (tempSurface == 0)
+  {
+    return TEX_NOT_FOUND;
+  }
+  SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer_, tempSurface);
+  SDL_FreeSurface(tempSurface);
+
+  if (texture != 0)
+  {
+    return addTexture(texture);
+  }
 }

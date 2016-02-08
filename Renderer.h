@@ -7,11 +7,14 @@ public:
   Renderer();
   ~Renderer();
 
-  SDL_Texture* getTexture(int TextureID);
   int load(char* texName);
-  int addTexture(SDL_Texture* texture);
+  void draw(int texID, int x, int y, int w, int h,);
+
 
 private:
+  SDL_Renderer* renderer_;
+  enum returnValues{TEX_NOT_FOUND, UNABLE_TO_ADD};
+  int addTexture(SDL_Texture* texture);
   // number of textures held in Renderer
   const int size_ = 64;
   // array of stored textures
