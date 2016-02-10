@@ -55,13 +55,23 @@ int DrawComponent::load(char* texName)
   return -1;
 }
 
-void DrawComponent::draw(int texID, int x, int y, int w, int h)
+void DrawComponent::draw(int texID, int x, int y, int width, int height)
 {
   // only try to draw if texture present
   if (textures_[texID] != NULL)
   {
     printf("Drawing here\n");
     //TODO: implement SDL Drawing
+    SDL_Rect srcRect;
+    SDL_Rect destRect;
+    srcRect.x = 0;
+    srcRect.y = 0;
+    srcRect.w = destRect.w = width;
+    srcRect.h = destRect.h = height;
+    destRect.x = x;
+    destRect.y = y;
+
+    SDL_RenderCopy(renderer_, textures_[texID], &srcRect, &destRect);
   }
   else
   {

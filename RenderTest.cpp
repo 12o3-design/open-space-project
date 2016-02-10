@@ -33,9 +33,11 @@ int main(int argc, char* argv[])
   DrawComponent* theDrawer = new DrawComponent(renderer);
   int ID = theDrawer->load("test.png");
   printf("Texture loaded: %d \n", ID);
-  theDrawer->draw(ID, 100, 100, 100, 100);
 
   SDL_RenderClear(renderer);
+
+  theDrawer->draw(ID, 100, 100, 100, 100);
+
   SDL_RenderPresent(renderer);
 
   SDL_Delay(2000);
