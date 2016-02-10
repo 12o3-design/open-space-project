@@ -65,8 +65,10 @@ bool Game::setup(const char* title, int xPos, int yPos, int width, int height, i
       SDL_SetRenderDrawColor(renderer_, 0,0,0,255);
       running_ = true;
 
+      printf("making the player.\n");
       entities_[0] = new Player(drawComponent_);
-
+      entities_[0]->setup();
+      printf("player made.\n");
       return true;
     }
   }

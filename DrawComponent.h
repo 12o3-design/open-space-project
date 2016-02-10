@@ -11,7 +11,7 @@ public:
   DrawComponent(SDL_Renderer* renderer);
   ~DrawComponent();
 
-  int load(std::string texName);
+  int load(char* texName);
   void draw(int texID, int x, int y, int w, int h);
 
 
