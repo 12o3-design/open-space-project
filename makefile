@@ -11,6 +11,9 @@ EXE = openspace
 
 all: $(SOURCES) $(EXE)
 
+drawtest:
+	$(CXX) RenderTest.cpp DrawComponent.cpp $(SDL) -o drawtest
+
 $(EXE): $(OBJECTS)
 	$(CXX) $(LDFLAGS) $(SOURCES) -o $@
 

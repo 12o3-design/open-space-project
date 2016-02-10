@@ -1,7 +1,7 @@
 #include "DrawComponent.h"
 #include <stdio.h>
 
-int main(int argc, char*[] argv)
+int main(int argc, char* argv[])
 {
   if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
   {
@@ -18,29 +18,29 @@ int main(int argc, char*[] argv)
   );
   if (window == NULL)
   {
-    printf("Window not initialized");
+    printf("Window not initialized\n");
     return -1;
   }
   SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
   if (renderer == NULL)
   {
-    printf("Renderer not initialized");
+    printf("Renderer not initialized\n");
     return -1;
   }
   SDL_SetRenderDrawColor(renderer, 255,255,255,255);
 
 
-  DrawComponent theDrawer = new DrawComponent(renderer);
-  int ID = theDrawer.load("test.png");
-  theDrawer.draw(ID, 100, 100, 100, 100);
+  DrawComponent* theDrawer = new DrawComponent(renderer);
+  int ID = theDrawer->load("test.png");
+  printf("Texture loaded: %d \n", ID);
+  theDrawer->draw(ID, 100, 100, 100, 100);
 
   SDL_RenderClear(renderer);
   SDL_RenderPresent(renderer);
 
-  while(true)
-  {
-    
-  }
+  SDL_Delay(2000);
+
+  SDL_Quit();
 
 
 

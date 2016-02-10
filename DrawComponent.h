@@ -4,7 +4,7 @@
 class DrawComponent
 {
 public:
-  DrawComponent();
+  DrawComponent(SDL_Renderer* renderer);
   ~DrawComponent();
 
   int load(char* texName);
@@ -18,8 +18,8 @@ private:
   // number of textures held in Renderer
   const int size_ = 64;
   // array of stored textures
-  SDL_Texture* textures_;
+  SDL_Texture** textures_;
   // allow only one to be instantiated
   static bool inst_;
 
-}
+};
