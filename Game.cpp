@@ -62,7 +62,7 @@ bool Game::setup(const char* title, int xPos, int yPos, int width, int height, i
 
       //test code pls delete
 
-      SDL_SetRenderDrawColor(renderer_, 255,255,255,255);
+      SDL_SetRenderDrawColor(renderer_, 0,0,0,255);
       running_ = true;
 
       entities_[0] = new Player(drawComponent_);

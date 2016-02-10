@@ -1,12 +1,19 @@
+#include "Player.h"
+
 Player::Player(DrawComponent* drawComponent)
 {
   drawComponent_ = drawComponent;
-  texID_ = drawComponent_->load(texName_);
 }
 
 Player::~Player()
 {
 
+}
+
+void Player::setup()
+{
+  printf("Attempting to load texture");
+  texID_ = drawComponent_->load(texName_);
 }
 
 void Player::update()

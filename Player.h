@@ -13,6 +13,7 @@ public:
 
   void update();
   void draw();
+  void setup();
 
   void setX(int x) { x_ = x; }
   void setY(int y) { y_ = y; }
@@ -22,7 +23,7 @@ public:
 
 private:
   DrawComponent* drawComponent_;
-  std::string texName_ = "assets/player.png";
+  std::string texName_ = "/assets/player.png";
   int texID_;
   int x_;
   int y_;

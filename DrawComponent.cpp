@@ -31,15 +31,17 @@ int DrawComponent::addTexture(SDL_Texture* texture)
     if (textures_[i] == NULL)
     {
       textures_[i] = texture;
+      printf("texture added: %d", i);
       return i;
     }
   }
+  printf("unable to load texture");
   return UNABLE_TO_ADD;
 }
 
-int DrawComponent::load(char* texName)
+int DrawComponent::load(std::string texName)
 {
-  SDL_Surface* tempSurface = IMG_Load(texName);
+  SDL_Surface* tempSurface = IMG_Load(texName.c_str());
   if (tempSurface == 0)
   {
     return TEX_NOT_FOUND;
@@ -60,8 +62,6 @@ void DrawComponent::draw(int texID, int x, int y, int width, int height)
   // only try to draw if texture present
   if (textures_[texID] != NULL)
   {
-    printf("Drawing here\n");
-    //TODO: implement SDL Drawing
     SDL_Rect srcRect;
     SDL_Rect destRect;
     srcRect.x = 0;
@@ -75,6 +75,6 @@ void DrawComponent::draw(int texID, int x, int y, int width, int height)
   }
   else
   {
-    printf("Texture not present\n");
+  //  printf("Texture not present\n");
   }
 }
