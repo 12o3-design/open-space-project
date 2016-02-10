@@ -8,6 +8,10 @@ DrawComponent::DrawComponent(SDL_Renderer* renderer)
   {
     inst_ = true;
     textures_ = new SDL_Texture* [size_];
+    for (int i = 0; i < size_; i++)
+    {
+      textures_[i] = NULL;
+    }
     renderer_ = renderer;
   }
 }
@@ -56,11 +60,11 @@ void DrawComponent::draw(int texID, int x, int y, int w, int h)
   // only try to draw if texture present
   if (textures_[texID] != NULL)
   {
-    printf("Drawing here");
+    printf("Drawing here\n");
     //TODO: implement SDL Drawing
   }
   else
   {
-    printf("Texture not present");
+    printf("Texture not present\n");
   }
 }
