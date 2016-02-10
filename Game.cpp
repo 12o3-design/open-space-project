@@ -1,4 +1,6 @@
 #include "Game.h"
+#include "Player.h"
+#include "DrawComponent.h"
 #include <stdio.h>
 #include <SDL2/SDL.h>
 
@@ -10,12 +12,20 @@ Game::Game()
   {
     window_ = NULL;
     renderer_ = NULL;
+    drawComponent_ = new DrawComponent(renderer_);
+    entities_ = new Entity*[numEntities_];
+    for (int i = 0; i < numEntities_; i++)
+    {
+      entities_[i] = NULL;
+    }
     running_ = false;
     inst_ = true;
   }
 }
 Game::~Game()
 {
+  delete drawComponent_;
+  delete[] entities_;
   SDL_DestroyWindow(window_);
 }
 
@@ -51,12 +61,13 @@ bool Game::setup(const char* title, int xPos, int yPos, int width, int height, i
       }
 
       //test code pls delete
-      else
-      {
-        SDL_SetRenderDrawColor(renderer_, 255,255,255,255);
-        running_ = true;
-        return true;
-      }
+
+      SDL_SetRenderDrawColor(renderer_, 255,255,255,255);
+      running_ = true;
+
+      entities_[0] = new Player(drawComponent_);
+
+      return true;
     }
   }
 }
@@ -80,9 +91,19 @@ void Game::update()
 {
 
 }
+
 void Game::draw()
 {
   SDL_RenderClear(renderer_);
+
+  for (int i = 0; i < numEntities_; i++)
+  {
+    if (entities_[i] != NULL)
+    {
+      entities_[i]->draw();
+    }
+  }
+
   SDL_RenderPresent(renderer_);
 }
 

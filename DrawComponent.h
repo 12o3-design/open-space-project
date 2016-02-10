@@ -1,3 +1,6 @@
+#ifndef DRAWCOMPONENT_H
+#define DRAWCOMPONENT_H
+
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
 
@@ -23,3 +26,5 @@ private:
   static bool inst_;
 
 };
+
+#endif

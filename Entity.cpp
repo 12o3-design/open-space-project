@@ -8,7 +8,7 @@ Entity::Entity()
   numEntities++;
 }
 
-void Entity::setEntityID(entityID)
+void Entity::setEntityID(int entityID)
 {
   entityID_ = entityID;
 }
