@@ -1,5 +1,5 @@
 CXX = clang++
-SDL = -lSDL2 -lSDL2_image
+SDL = -framework SDL2 -framework SDL2_image
 SDLLIBS = -Wl,-Bstatic 'sdl-config --static-libs' -Wl,-Bdynamic
 # If your compiler is a bit older you may need to change -std=c++11 to -std=c++0x
 CXXFLAGS = -Wall -Wno-c++11-extensions -c -std=c++11
