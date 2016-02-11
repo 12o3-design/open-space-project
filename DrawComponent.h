@@ -1,9 +1,15 @@
 #ifndef DRAWCOMPONENT_H
 #define DRAWCOMPONENT_H
 
-#include <SDL2/SDL.h>
-#include <SDL2_image/SDL_image.h>
 #include <string>
+
+#include <SDL2/SDL.h>
+
+#ifdef __APPLE__
+#include <SDL2_image/SDL_image.h>
+#elif __linux__
+#include <SDL2/SDL_image.h>
+#endif
 
 class DrawComponent
 {
