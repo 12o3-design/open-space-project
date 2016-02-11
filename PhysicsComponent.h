@@ -1,3 +1,6 @@
+#ifndef PHYSICSCOMPONENT_H
+#define PHYSICSCOMPONENT_H
+
 #include <stdio.h>
 
 class PhysicsComponent
@@ -8,6 +11,10 @@ public:
   double y_;
   double mass_;
 
+  virtual void update() = 0;
+
 private:
 
-}
+};
+
+#endif
