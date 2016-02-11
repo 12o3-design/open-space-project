@@ -12,7 +12,6 @@ Game::Game()
   {
     window_ = NULL;
     renderer_ = NULL;
-    drawComponent_ = new DrawComponent(renderer_);
     entities_ = new Entity*[numEntities_];
     for (int i = 0; i < numEntities_; i++)
     {
@@ -59,6 +58,8 @@ bool Game::setup(const char* title, int xPos, int yPos, int width, int height, i
         printf("SDL Renderer not initialized");
         return false;
       }
+
+      drawComponent_ = new DrawComponent(renderer_);
 
       //test code pls delete
 
