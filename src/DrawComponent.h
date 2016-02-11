@@ -18,7 +18,7 @@ public:
   ~DrawComponent();
 
   int load(std::string texName);
-  void draw(int texID, int x, int y, int w, int h);
+  void draw(int texID, int x, int y, int width, int height, double rotate, SDL_Point* center);
 
 
 private:

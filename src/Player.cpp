@@ -22,5 +22,5 @@ void Player::update()
 
 void Player::draw()
 {
-  drawComponent_->draw(texID_, 100, 100, 80, 80);
+  drawComponent_->draw(texID_, 100, 100, 80, 80, 0, NULL);
 }

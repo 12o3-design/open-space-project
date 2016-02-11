@@ -58,7 +58,7 @@ int DrawComponent::load(std::string texName)
   return -1;
 }
 
-void DrawComponent::draw(int texID, int x, int y, int width, int height)
+void DrawComponent::draw(int texID, int x, int y, int width, int height, double rotate, SDL_Point* center)
 {
   // only try to draw if texture present
   if (textures_[texID] != NULL)
@@ -72,7 +72,7 @@ void DrawComponent::draw(int texID, int x, int y, int width, int height)
     destRect.x = x;
     destRect.y = y;
 
-    SDL_RenderCopy(renderer_, textures_[texID], &srcRect, &destRect);
+    SDL_RenderCopyEx(renderer_, textures_[texID], &srcRect, &destRect, rotate, center, SDL_FLIP_NONE);
   }
   else
   {
