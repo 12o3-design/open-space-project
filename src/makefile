@@ -34,4 +34,3 @@ debug: $(OBJECTS)
 
 clean:
 	rm *.o && rm $(EXE)
-
