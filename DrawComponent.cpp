@@ -39,7 +39,7 @@ int DrawComponent::addTexture(SDL_Texture* texture)
   return UNABLE_TO_ADD;
 }
 
-int DrawComponent::load(char* texName)
+int DrawComponent::load(const char* texName)
 {
   printf("drawComponent load.\n");
   SDL_Surface* tempSurface = IMG_Load(texName);
