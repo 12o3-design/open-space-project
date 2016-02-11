@@ -23,7 +23,7 @@ public:
 
 private:
   DrawComponent* drawComponent_;
-  std::string texName_ = "test.png";
+  std::string texName_ = "assets/player.png";
   int texID_;
   int x_;
   int y_;

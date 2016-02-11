@@ -41,11 +41,9 @@ int DrawComponent::addTexture(SDL_Texture* texture)
 
 int DrawComponent::load(std::string texName)
 {
-  printf("drawComponent load.\n");
   SDL_Surface* tempSurface = IMG_Load(texName.c_str());
   if (tempSurface == 0)
   {
-    printf("Image not found.\n");
     return TEX_NOT_FOUND;
   }
 
@@ -57,7 +55,6 @@ int DrawComponent::load(std::string texName)
     return addTexture(texture);
   }
   // if you get here there's a problem
-  printf("there is a problem.\n");
   return -1;
 }
 

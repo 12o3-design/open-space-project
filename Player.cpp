@@ -2,7 +2,6 @@
 
 Player::Player(DrawComponent* drawComponent)
 {
-  printf("In player constructor.\n");
   drawComponent_ = drawComponent;
 }
 
@@ -13,8 +12,7 @@ Player::~Player()
 
 void Player::setup()
 {
-  printf("Attempting to load texture.\n");
-  texID_ = drawComponent_->load("test.png");
+  texID_ = drawComponent_->load(texName_);
 }
 
 void Player::update()
