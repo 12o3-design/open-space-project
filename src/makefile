@@ -13,17 +13,15 @@ SDLLIBS = -Wl,-Bstatic 'sdl-config --static-libs' -Wl,-Bdynamic
 CXXFLAGS = -Wall -Wno-c++11-extensions -c -std=c++11
 LDFLAGS = -Wno-c++11-extensions $(SDL)
 SOURCES = main.cpp Game.cpp Entity.cpp Player.cpp DrawComponent.cpp
+BUILDDIR = ../bin
 OBJECTS = $(SOURCES:.cpp=.o)
 EXE = openspace
 
 
 all: $(SOURCES) $(EXE)
 
-drawtest:
-	$(CXX) $(CXXFLAGS) RenderTest.cpp DrawComponent.cpp $(SDL) -o drawtest
-
 $(EXE): $(OBJECTS)
-	$(CXX) $(SOURCES) $(LDFLAGS) -o $@
+	$(CXX) $(SOURCES) $(LDFLAGS) -o $(BUILDDIR)/$@
 
 debug: $(OBJECTS)
 	$(CXX) $(LDFLAGS) $(OBJECTS) -g -o debug
