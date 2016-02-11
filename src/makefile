@@ -13,6 +13,7 @@ SDLLIBS = -Wl,-Bstatic 'sdl-config --static-libs' -Wl,-Bdynamic
 CXXFLAGS = -Wall -Wno-c++11-extensions -c -std=c++11
 LDFLAGS = -Wno-c++11-extensions $(SDL)
 SOURCES = main.cpp Game.cpp Entity.cpp Player.cpp DrawComponent.cpp
+OBJDIR = ../obj
 BUILDDIR = ../bin
 OBJECTS = $(SOURCES:.cpp=.o)
 EXE = openspace
