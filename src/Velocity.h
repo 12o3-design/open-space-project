@@ -1,13 +1,20 @@
 // A class containing velocity information: direction and magnitiude
 
-#ifndef VELOCTY_H
+#ifndef VELOCITY_H
 #define VELOCITY_H
 
 class Velocity
 {
 public:
-  Velocity();
-  Velocity(double direction, double magnitude);
+  Velocity() :
+  direction(0),
+  magnitude(0)
+  {}
+
+  Velocity(double direction, double magnitude) :
+  direction(direction),
+  magnitude(magnitude)
+  {}
 
   void setDirection(double direction) { this->direction = direction; }
   void setMagnitude(double magnitude) { this->magnitude = magnitude; }
