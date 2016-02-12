@@ -1,9 +1,11 @@
-// A class containing velocity information: direction and magnitiude
+// A class containing velocity information and some
+// helper functions to convert between polar and
+// cartesian coordinates.
 
 #ifndef VECTOR_H
 #define VECTOR_H
 
-class Velocity
+class Vector
 {
 public:
   Vector() :
@@ -11,12 +13,12 @@ public:
   magnitude(0),
   xComp(0),
   yComp(0)
-  {}
+  { updateCartesianComps(); }
 
   Vector(double direction, double magnitude) :
   direction(direction),
   magnitude(magnitude)
-  {}
+  { updateCartesianComps(); }
 
   void setDirection(double direction);
   void setMagnitude(double magnitude);

@@ -1,15 +1,13 @@
-#include "Velocity.h"
+#include "Vector.h"
 #include <iostream>
 
 int main(int argc, char const *argv[])
 {
-  Velocity testVel = Velocity();
+  Vector testVel = Vector();
 
-  std::cout << "Magnitude: " + std::to_string(testVel.getMagnitude()) + "\nDirection: " + std::to_string(testVel.getDirection()) << std::endl;
+  testVel.setMagnitude(1);
+  testVel.setDirection(6.28);
 
-  testVel.setMagnitude(2.5);
-  testVel.setDirection(83.45);
-
-  std::cout << "\nMagnitude: " + std::to_string(testVel.getMagnitude()) + "\nDirection: " + std::to_string(testVel.getDirection()) << std::endl;
+  std::cout << "x comp: " + std::to_string(testVel.getXComp()) + "\ny comp: " + std::to_string(testVel.getYComp()) << std::endl;
   return 0;
 }
