@@ -7,19 +7,19 @@ class PhysicsComponent
 {
 public:
   const static double GRAV_CONST = 6.2;
-  int x_;
-  int y_;
-  double mass_;
+  int x;
+  int y;
+  double mass;
 
   virtual void update() = 0;
 
-  void setX(int x) { x_ = x; }
-  void setY(int y) { y_ = y; }
-  void setMass(double mass) { mass_ = mass; }
+  void setX(int x) { this->x = x; }
+  void setY(int y) { this->y = y; }
+  void setMass(double mass) { this->mass = mass; }
 
-  int getX() { return x_; }
-  int getY() { return y_; }
-  double getMass() { return mass_; }
+  int getX() { return x; }
+  int getY() { return y; }
+  double getMass() { return mass; }
 
 private:
 

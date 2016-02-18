@@ -18,4 +18,6 @@ inline void vectorSum(Vect* vecA, Vect* vecB, Vect* vecSum)
   vecSum->yComp = vecA->yComp + vecB->yComp;
 }
 
+
+
 #endif

@@ -9,18 +9,24 @@ class PlayerPhysics : public PhysicsComponent
 {
 public:
 
+  PlayerPhysics();
+  PlayerPhysics(int x, int y);
+  ~PlayerPhysics();
+
   void update();
 
   void setVelocity(Vect velocity) { this->velocity = velocity; }
-  void setAcceleration(Vector acceleration) { acceleration_ = acceleration; }
+  void setAccel(Vect accel) { this->accel = accel; }
 
-  Vector getVelocity() { return velocity_; }
-  Vector getAcceleration() { return acceleration_; }
+  Vect getVelocity() { return velocity; }
+  Vect getAccel() { return accel; }
 
 private:
 
   Vect velocity;
-  Vect acceleration_;
+  Vect accel;
+
+  double theta;
 
 };
 #endif
