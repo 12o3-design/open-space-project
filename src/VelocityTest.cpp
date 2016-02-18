@@ -1,14 +1,24 @@
-#include "Vector.h"
-#include <iostream>
-#include <math.h>
+#include "Vect.h"
+#include <stdio.h>
 
-int main(int argc, char const *argv[])
+int main(int argc, char* argv[])
 {
-  Vector testVel = Vector();
 
-  testVel.setMagnitude(1);
-  testVel.setDirection(2 * M_PI);
+  Vect* test1 = new Vect();
+  test1->xComp = 3;
+  test1->yComp = 2;
 
-  std::cout << "x comp: " + std::to_string(testVel.getXComp()) + "\ny comp: " + std::to_string(testVel.getYComp()) << std::endl;
+  Vect* test2 = new Vect();
+  test2->xComp = 5;
+  test2->yComp = -4;
+
+  printf("\ntest1:\nx:%d\ny:%d\n", test1->xComp, test1->yComp);
+  printf("\ntest2:\nx:%d\ny:%d\n", test2->xComp, test2->yComp);
+
+  Vect* sum = new Vect();
+  vectorSum(test1, test2, sum);
+
+  printf("\nsum:\nx:%d\ny:%d\n", sum->xComp, sum->yComp);
+
   return 0;
 }
