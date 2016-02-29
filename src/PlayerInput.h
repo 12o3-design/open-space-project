@@ -1,10 +1,12 @@
 #ifndef PLAYERINPUT_H
 #define PLAYERINPUT_H
 
+#include "Command.h"
+
 class PlayerInput : public InputComponent
 {
 public:
-  void handleInput();
+  Command* handleInput();
 
 private:
 
