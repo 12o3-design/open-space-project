@@ -24,6 +24,7 @@
 
 # Build script
 .waf*
+waf
 
 # Executables
 *.exe
