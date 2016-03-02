@@ -24,6 +24,7 @@ Game::Game()
 Game::~Game()
 {
   delete drawComponent_;
+  delete inputComponent_;
   delete[] entities_;
   SDL_DestroyWindow(window_);
 }
@@ -60,6 +61,7 @@ bool Game::setup(const char* title, int xPos, int yPos, int width, int height, i
       }
 
       drawComponent_ = new DrawComponent(renderer_);
+      inputComponent_ = new InputComponent();
 
       //test code pls delete
 
@@ -77,21 +79,16 @@ bool Game::setup(const char* title, int xPos, int yPos, int width, int height, i
 void Game::handleInput()
 {
   SDL_Event event;
+
   while (SDL_PollEvent(&event) != 0)
   {
-    if ( event.type == SDL_QUIT )
+    if (event.type == SDL_QUIT)
     {
       running_ = false;
     }
     else if (event.type == SDL_KEYDOWN)
     {
-      switch( event.key.keysym.sym)
-      {
-        case SDLK_w:
-          printf("Pressed W\n");
-        default:
-          break;
-      }
+      inputComponent_->handleInput(event);
     }
   }
 }
