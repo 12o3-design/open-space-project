@@ -22,9 +22,11 @@
 *.a
 *.lib
 
+# Build script
+.waf*
+
 # Executables
 *.exe
 *.out
 *.app
 openspace
-

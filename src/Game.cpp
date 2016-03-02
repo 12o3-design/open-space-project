@@ -77,7 +77,7 @@ bool Game::setup(const char* title, int xPos, int yPos, int width, int height, i
 void Game::handleInput()
 {
   SDL_Event event;
-  if (SDL_PollEvent(&event))
+  while (SDL_PollEvent(&event) != 0)
   {
     if ( event.type == SDL_QUIT )
     {

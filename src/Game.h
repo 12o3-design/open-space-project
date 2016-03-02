@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include "DrawComponent.h"
+#include "InputComponent.h"
 #include "Player.h"
 
 class Game
@@ -28,7 +29,9 @@ private:
   SDL_Window* window_;
   SDL_Renderer* renderer_;
 
+  // Game components
   DrawComponent* drawComponent_;
+  InputComponent* inputComponent_;
 
   Entity** entities_;
 
