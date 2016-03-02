@@ -23,7 +23,7 @@
 *.lib
 
 # Build script
-.waf*
+.waf-1.8.19-*
 waf
 
 # Executables

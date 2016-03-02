@@ -1,0 +1,8 @@
+argv = ['/Users/owenmonsma/Documents/open-space-project/waf', 'configure']
+environ = {'TERM_SESSION_ID': '6181E5F3-8206-443C-BD54-FB4EBC324503', 'XPC_SERVICE_NAME': '0', 'VERSIONER_PYTHON_PREFER_32_BIT': 'no', 'TERM_PROGRAM_VERSION': '361.1', 'SSH_AUTH_SOCK': '/private/tmp/com.apple.launchd.WDxTdPctK8/Listeners', 'SHELL': '/bin/bash', 'LOGNAME': 'owenmonsma', 'USER': 'owenmonsma', 'HOME': '/Users/owenmonsma', 'PATH': '/usr/local/heroku/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin', 'DISPLAY': '/private/tmp/com.apple.launchd.v4IA2M1Zb4/org.macosforge.xquartz:0', 'TMPDIR': '/var/folders/vj/gjr61rf90dxg_hs8y4r7psjr0000gn/T/', 'TERM_PROGRAM': 'Apple_Terminal', 'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'Apple_PubSub_Socket_Render': '/private/tmp/com.apple.launchd.IrVcAeEjVn/Render', 'VERSIONER_PYTHON_VERSION': '2.7', 'SHLVL': '1', 'XPC_FLAGS': '0x0', '__CF_USER_TEXT_ENCODING': '0x1F5:0x0:0x0', 'PWD': '/Users/owenmonsma/Documents/open-space-project', '_': '/Users/owenmonsma/Documents/open-space-project/waf'}
+files = ['/Users/owenmonsma/Documents/open-space-project/wscript']
+hash = '!\xc3W8A=[\xf3\x07F6fd\x8ak\x7f'
+options = {'files': '', 'no_lock_in_run': '', 'jobs': 4, 'verbose': 0, 'no_lock_in_out': '', 'progress_bar': 0, 'distcheck_args': None, 'top': '', 'libdir': None, 'colors': 'auto', 'destdir': '', 'keep': 0, 'zones': '', 'prefix': '/usr/local/', 'force': False, 'no_lock_in_top': '', 'targets': '', 'bindir': None, 'out': ''}
+out_dir = '/Users/owenmonsma/Documents/open-space-project/build'
+run_dir = '/Users/owenmonsma/Documents/open-space-project'
+top_dir = '/Users/owenmonsma/Documents/open-space-project'
