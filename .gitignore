@@ -25,6 +25,7 @@
 # Build script
 .waf-1.8.19-*
 .lock-waf_darwin_build
+build
 
 # Executables
 *.exe
