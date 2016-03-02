@@ -79,13 +79,19 @@ void Game::handleInput()
   SDL_Event event;
   if (SDL_PollEvent(&event))
   {
-    switch(event.type)
+    if ( event.type == SDL_QUIT )
     {
-      case SDL_QUIT:
-        running_ = false;
-        break;
-      default:
-        break;
+      running_ = false;
+    }
+    else if (event.type == SDL_KEYDOWN)
+    {
+      switch( event.key.keysym.sym)
+      {
+        case SDLK_w:
+          printf("Pressed W\n");
+        default:
+          break;
+      }
     }
   }
 }
