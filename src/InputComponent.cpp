@@ -22,12 +22,11 @@ Command* InputComponent::handleInput(SDL_Event event)
   switch( event.key.keysym.sym)
   {
     case SDLK_w:
-    //printf("Key W\n");
       return key_w;
     case SDLK_a:
       return key_a;
-    case SDLK_s:
-      return key_s;
+    case SDLK_d:
+      return key_d;
     default:
       return defaultCommand;
       break;
