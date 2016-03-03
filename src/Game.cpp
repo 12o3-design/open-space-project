@@ -23,8 +23,11 @@ Game::Game()
 }
 Game::~Game()
 {
+  printf("Deleting draw component\n");
   delete drawComponent_;
+  printf("Deleting input component\n");
   delete inputComponent_;
+  printf("deleting entities\n");
   delete[] entities_;
   SDL_DestroyWindow(window_);
 }
@@ -88,7 +91,10 @@ void Game::handleInput()
     }
     else if (event.type == SDL_KEYDOWN)
     {
-      inputComponent_->handleInput(event);
+      // execute command
+      Command* command = inputComponent_->handleInput(event);
+      //printf("Command received, executing\n");
+      command->execute(entities_[0]);
     }
   }
 }

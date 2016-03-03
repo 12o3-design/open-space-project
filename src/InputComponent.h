@@ -9,7 +9,9 @@ class InputComponent
 {
 public:
 
-  virtual void handleInput(SDL_Event event);
+  InputComponent();
+  ~InputComponent();
+  Command* handleInput(SDL_Event event);
 
 private:
 
@@ -17,6 +19,7 @@ private:
   Command* key_a;
   Command* key_s;
   Command* key_d;
+  Command* defaultCommand;
 };
 
 #endif

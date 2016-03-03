@@ -6,19 +6,27 @@
 class PlayerTurnLeft : public Command
 {
 public:
-  void execute (Entity& entity);
+  virtual void execute (Entity* entity);
 private:
 
 };
 
 class PlayerTurnRight : public Command
 {
-  void execute (Entity& entity);
+public:
+  virtual void execute (Entity* entity);
 };
 
 class PlayerAccel : public Command
 {
-  void execute (Entity& entity);
+public:
+  virtual void execute (Entity* entity);
+};
+
+class DefaultCommand : public Command
+{
+public:
+  virtual void execute (Entity* entity);
 };
 
 #endif
