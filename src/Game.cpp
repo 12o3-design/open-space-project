@@ -89,7 +89,7 @@ void Game::handleInput()
     {
       running_ = false;
     }
-    else if (event.type == SDL_KEYDOWN)
+    else if (event.type == SDL_KEYDOWN && event.key.repeat == 0)
     {
       // execute command
       Command* command = inputComponent_->handleInput(event);
@@ -101,7 +101,13 @@ void Game::handleInput()
 
 void Game::update()
 {
-
+  for (int i = 0; i < numEntities_; i++)
+  {
+    if (entities_[i] != NULL)
+    {
+      entities_[i]->update();
+    }
+  }
 }
 
 void Game::draw()

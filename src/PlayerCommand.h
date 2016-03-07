@@ -23,6 +23,12 @@ public:
   virtual void execute (Entity* entity);
 };
 
+class PlayerStopAccel : public Command
+{
+public:
+  virtual void execute (Entity* entity);
+};
+
 class DefaultCommand : public Command
 {
 public:

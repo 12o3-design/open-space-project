@@ -12,10 +12,12 @@ struct Vect
 
 };
 
-inline void vectorSum(Vect* vecA, Vect* vecB, Vect* vecSum)
+inline Vect vectorSum(Vect* vecA, Vect* vecB)
 {
-  vecSum->xComp = vecA->xComp + vecB->xComp;
-  vecSum->yComp = vecA->yComp + vecB->yComp;
+  Vect vecSum;
+  vecSum.xComp = vecA->xComp + vecB->xComp;
+  vecSum.yComp = vecA->yComp + vecB->yComp;
+  return vecSum;
 }
 
 

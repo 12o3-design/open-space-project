@@ -13,13 +13,16 @@ public:
   PlayerPhysics(int x, int y);
   ~PlayerPhysics();
 
+  void setup();
   void update();
 
   void setVelocity(Vect velocity) { this->velocity = velocity; }
+  void setVelocity(int xComp, int yComp);
   void setAccel(Vect accel) { this->accel = accel; }
+  void setAccel(int xComp, int yComp);
 
-  Vect getVelocity() { return velocity; }
-  Vect getAccel() { return accel; }
+  Vect* getVelocity() { return &velocity; }
+  Vect* getAccel() { return &accel; }
 
 private:
 

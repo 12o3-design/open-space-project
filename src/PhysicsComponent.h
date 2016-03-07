@@ -6,7 +6,7 @@
 class PhysicsComponent
 {
 public:
-  const static double GRAV_CONST = 6.2;
+//  const static double GRAV_CONST = 6.2;
   int x;
   int y;
   double mass;

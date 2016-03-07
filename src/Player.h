@@ -4,6 +4,7 @@
 #include <string>
 #include "Entity.h"
 #include "DrawComponent.h"
+#include "PlayerPhysics.h"
 
 class Player : public Entity
 {
@@ -21,8 +22,14 @@ public:
   int getX() { return x_; }
   int getY() { return y_; }
 
+  virtual void accelerate();
+  virtual void stopAccel();
+
 private:
   DrawComponent* drawComponent_;
+
+  PlayerPhysics* playerPhys;
+
   std::string texName_ = "../assets/player.png";
   int texID_;
   int x_;

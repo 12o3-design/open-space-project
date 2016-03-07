@@ -16,9 +16,10 @@ int main(int argc, char* argv[])
   printf("\ntest2:\nx:%d\ny:%d\n", test2->xComp, test2->yComp);
 
   Vect* sum = new Vect();
-  vectorSum(test1, test2, sum);
+  sum = vectorSum(test1, test2);
 
   printf("\nsum:\nx:%d\ny:%d\n", sum->xComp, sum->yComp);
 
+  delete sum;
   return 0;
 }
