@@ -6,6 +6,9 @@
 
 bool Game::inst_ = false;
 
+const int SCREEN_FPS = 60;
+const int SCREEN_TICKS_PER_FRAME = 1000 / SCREEN_FPS;
+
 Game::Game()
 {
   if (!inst_)
@@ -56,7 +59,7 @@ bool Game::setup(const char* title, int xPos, int yPos, int width, int height, i
     }
     else
     {
-      renderer_ = SDL_CreateRenderer(window_, -1, 0);
+      renderer_ = SDL_CreateRenderer(window_, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
       if (renderer_ == NULL)
       {
         printf("SDL Renderer not initialized");

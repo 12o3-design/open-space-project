@@ -9,8 +9,7 @@
 * Things draw on the screen now
 * Yay
 
-## Draw X/Y separate from physics X/Y
-Due to the scale of the universe I'm building, the player needs to be free to zoom in and out at will. As such, the physics calculations and object position will be calculated based on an underlying coordinate system that gets scaled by a zoom factor before objects are drawn.
+## Physics Units
+Because one of the main goals of the project the ability to scroll to zoom in and out with the mouse wheel, the physics system requires having a system of units that is separate from the underlying pixels of the screen (not to mention that I should probably start thinking about high resolution screens...) to make sure things get drawn properly.
 
-## Physics woes
-As it turns out, SDL takes the texture rotation argument as a double representing degrees, that follows a typical compass layout (0 degrees is straight upward and it increments clockwise). This is frustrating because radians are clearly a better and more intuitive system, not to mention that the taylor approximations of sine and cosine are based on using radians. Clearly, SDL is in the wrong here and radians are a superior choice.
+This unit will be based on a single pixel when the game is at standard zoom level. This will be the fundamental unit of the physics system as well as the underlying coordinate system.
