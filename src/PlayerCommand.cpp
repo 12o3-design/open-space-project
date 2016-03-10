@@ -5,6 +5,7 @@
 void PlayerTurnLeft::execute(Entity* entity)
 {
   printf("Turn left\n");
+  entity->rotateLeft();
 }
 
 void PlayerTurnRight::execute(Entity* entity)
@@ -21,7 +22,7 @@ void PlayerAccel::execute(Entity* entity)
 void PlayerStopAccel::execute(Entity* entity)
 {
   printf("End Accel\n");
-  entity->stopAccel();
+//  entity->stopAccel();
 }
 
 void DefaultCommand::execute(Entity* entity)

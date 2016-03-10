@@ -34,12 +34,17 @@ void Player::accelerate()
   delete newAccel;
 }
 
-void Player::stopAccel()
+void Player::rotateLeft()
+{
+ playerPhys->setRotate(-5);
+}
+
+void Player::rotateRight()
 {
 
 }
 
 void Player::draw()
 {
-  drawComponent_->draw(texID_, playerPhys->getX(), playerPhys->getY(), 80, 80, 0, NULL);
+  drawComponent_->draw(texID_, playerPhys->getX(), playerPhys->getY(), 80, 80, playerPhys->getTheta(), NULL);
 }

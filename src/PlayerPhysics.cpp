@@ -17,6 +17,8 @@ void PlayerPhysics::setup()
 {
   setVelocity(0,0);
   setAccel(0,0);
+  rotateRate = 0;
+  theta = 0;
 }
 
 PlayerPhysics::~PlayerPhysics()
@@ -44,4 +46,18 @@ void PlayerPhysics::update()
   // on each update step, position uncreases by velocity
   x += velocity.xComp;
   y += velocity.yComp;
+  // on each update step, rotate by rotate rotateRate
+
+  if (theta + rotateRate > 359)
+  {
+    theta = (theta + rotateRate - 360);
+  }
+  else if (theta + rotateRate < 0)
+  {
+    theta = (theta + rotateRate + 360);
+  }
+  else
+  {
+    theta = (theta + rotateRate);
+  }
 }

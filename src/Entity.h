@@ -13,8 +13,11 @@ public:
   virtual void update() =0;
   virtual void draw() =0;
 
+
+// game behaviors
   virtual void accelerate() =0;
-  virtual void stopAccel() =0;
+  virtual void rotateLeft() =0;
+  virtual void rotateRight() =0;
 
 private:
   int entityID_;

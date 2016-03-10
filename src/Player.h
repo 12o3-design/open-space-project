@@ -22,8 +22,11 @@ public:
   int getX() { return x_; }
   int getY() { return y_; }
 
+// game behaviors
   virtual void accelerate();
-  virtual void stopAccel();
+//  virtual void stopAccel();
+  virtual void rotateLeft();
+  virtual void rotateRight();
 
 private:
   DrawComponent* drawComponent_;
