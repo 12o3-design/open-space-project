@@ -1,5 +1,8 @@
 #include "Player.h"
 #include "Vect.h"
+#include <math.h>
+
+#define PI 3.14159265
 
 Player::Player(DrawComponent* drawComponent)
 {
@@ -25,9 +28,10 @@ void Player::update()
 void Player::accelerate()
 {
   Vect* newAccel = new Vect();
-  newAccel->xComp = 0;
-  newAccel->yComp = 5;
-
+  int theta = playerPhys->getTheta();
+  int accelRate = 5;
+  newAccel->xComp = accelRate * (sin(theta * (180/PI))) * -1;
+  newAccel->yComp = accelRate * (cos(theta * (180/PI))) * -1;
 
   playerPhys->setAccel(vectorSum(newAccel, playerPhys->getAccel()));
 

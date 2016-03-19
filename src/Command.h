@@ -8,7 +8,7 @@ class Command
 public:
   virtual ~Command(){}
   virtual void execute(Entity* entity) = 0;
-
+  virtual void release(Entity* entity) = 0;
 
 };
 

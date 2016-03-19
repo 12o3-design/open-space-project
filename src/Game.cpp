@@ -89,12 +89,20 @@ void Game::handleInput()
     {
       running_ = false;
     }
-    else if (event.type == SDL_KEYDOWN && event.key.repeat == 0)
+    else if (event.key.repeat == 0)
     {
-      // execute command
+
       Command* command = inputComponent_->handleInput(event);
-      //printf("Command received, executing\n");
-      command->execute(entities_[0]);
+      // if key is pushed, start event
+      if (event.type == SDL_KEYDOWN)
+      {
+        command->execute(entities_[0]);
+      }
+      // if key released, end event
+      else if (event.type == SDL_KEYUP)
+      {
+        command->release(entities_[0]);
+      }
     }
   }
 }

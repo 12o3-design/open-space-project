@@ -19,7 +19,7 @@ InputComponent::~InputComponent()
 
 Command* InputComponent::handleInput(SDL_Event event)
 {
-  switch( event.key.keysym.sym)
+  switch(event.key.keysym.sym)
   {
     case SDLK_w:
       return key_w;
