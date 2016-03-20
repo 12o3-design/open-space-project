@@ -7,8 +7,8 @@
 
 struct Vect
 {
-  int xComp;
-  int yComp;
+  double xComp;
+  double yComp;
 
 };
 

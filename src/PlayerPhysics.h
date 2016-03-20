@@ -17,15 +17,15 @@ public:
   void update();
 
   void setVelocity(Vect velocity) { this->velocity = velocity; }
-  void setVelocity(int xComp, int yComp);
+  void setVelocity(double xComp, double yComp);
   void setAccel(Vect accel) { this->accel = accel; }
-  void setAccel(int xComp, int yComp);
+  void setAccel(double xComp, double yComp);
   void setRotate(int rotate) { this->rotateRate = rotate; }
 
   Vect* getVelocity() { return &velocity; }
   Vect* getAccel() { return &accel; }
 
-  int getTheta() { return theta; }
+  double getTheta() { return theta; }
 
 private:
 

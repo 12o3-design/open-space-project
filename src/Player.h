@@ -23,10 +23,9 @@ public:
   int getY() { return y_; }
 
 // game behaviors
-  virtual void accelerate();
-//  virtual void stopAccel();
-  virtual void rotateLeft();
-  virtual void rotateRight();
+  virtual void accelerate(double rate);
+  virtual void rotateLeft(int rate);
+  virtual void rotateRight(int rate);
 
 private:
   DrawComponent* drawComponent_;

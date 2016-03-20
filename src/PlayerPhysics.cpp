@@ -26,13 +26,13 @@ PlayerPhysics::~PlayerPhysics()
 
 }
 
-void PlayerPhysics::setVelocity(int xComp, int yComp)
+void PlayerPhysics::setVelocity(double xComp, double yComp)
 {
   velocity.xComp = xComp;
   velocity.yComp = yComp;
 }
 
-void PlayerPhysics::setAccel(int xComp, int yComp)
+void PlayerPhysics::setAccel(double xComp, double yComp)
 {
   accel.xComp = xComp;
   accel.yComp = yComp;

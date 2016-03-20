@@ -2,7 +2,7 @@
 #include "Vect.h"
 #include <math.h>
 
-#define PI 3.14159265
+#define PI 3.1415926535897
 
 Player::Player(DrawComponent* drawComponent)
 {
@@ -25,27 +25,26 @@ void Player::update()
  playerPhys->update();
 }
 
-void Player::accelerate()
+void Player::accelerate(double rate)
 {
   Vect* newAccel = new Vect();
-  int theta = playerPhys->getTheta();
-  int accelRate = 5;
-  newAccel->xComp = accelRate * (sin(theta * (180/PI))) * -1;
-  newAccel->yComp = accelRate * (cos(theta * (180/PI))) * -1;
+  double theta = playerPhys->getTheta();
+  newAccel->xComp = rate * (sin(theta * (PI/180)));
+  newAccel->yComp = rate * (cos(theta * (PI/180))) * -1;
 
   playerPhys->setAccel(vectorSum(newAccel, playerPhys->getAccel()));
 
   delete newAccel;
 }
 
-void Player::rotateLeft()
+void Player::rotateLeft(int rate)
 {
- playerPhys->setRotate(-5);
+ playerPhys->setRotate(-rate);
 }
 
-void Player::rotateRight()
+void Player::rotateRight(int rate)
 {
-
+  playerPhys->setRotate(rate);
 }
 
 void Player::draw()
