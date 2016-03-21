@@ -46,6 +46,25 @@ void PlayerPhysics::update()
   // on each update step, position uncreases by velocity
   x += velocity.xComp;
   y += velocity.yComp;
+  if (x > 1280)
+  {
+    x = x - 1280;
+  }
+
+  if (y > 800)
+  {
+    y = y - 800;
+  }
+
+  if (x < 0)
+  {
+    x = x + 1280;
+  }
+
+  if (y < 0)
+  {
+    y = y + 800;
+  }
   // on each update step, rotate by rotate rotateRate
 
   if (theta + rotateRate > 359)
