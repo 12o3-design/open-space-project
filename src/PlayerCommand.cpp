@@ -30,7 +30,7 @@ void PlayerTurnRight::release(Entity* entity)
 void PlayerAccel::execute(Entity* entity)
 {
   printf("Accelerate\n");
-  entity->accelerate(.25);
+  entity->accelerate(.1);
 }
 
 void PlayerAccel::release(Entity* entity)
