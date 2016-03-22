@@ -1,4 +1,6 @@
 #include "PlayerPhysics.h"
+#include <math.h>
+#define PI 3.1415926535897
 
 PlayerPhysics::PlayerPhysics()
 {
@@ -38,13 +40,15 @@ void PlayerPhysics::setAccel(double xComp, double yComp)
   accel.yComp = yComp;
 }
 
-void PlayerPhysics::setAccel(int accelRate)
+void PlayerPhysics::setAccel(double accelRate)
 {
-
+  this->accelRate = accelRate;
 }
 
 void PlayerPhysics::update()
 {
+  accel.xComp = accelRate * (sin(theta * (PI/180)));
+  accel.yComp = accelRate * (cos(theta * (PI/180))) * -1;
   // on each update step,velocity increases by accel
   velocity.xComp += accel.xComp;
   velocity.yComp += accel.yComp;

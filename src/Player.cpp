@@ -1,8 +1,5 @@
 #include "Player.h"
 #include "Vect.h"
-#include <math.h>
-
-#define PI 3.1415926535897
 
 Player::Player(DrawComponent* drawComponent)
 {
@@ -27,9 +24,7 @@ void Player::update()
 
 void Player::accelerate(double rate)
 {
-  int theta = playerPhys->getTheta();
-  playerPhys->setAccel(rate * (sin(theta * (PI/180))), rate * (cos(theta * (PI/180))) * -1);
-
+  playerPhys->setAccel(rate);
 }
 
 void Player::rotateLeft(int rate)
