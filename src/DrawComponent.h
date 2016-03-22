@@ -21,7 +21,8 @@ public:
   int load(std::string texName);
   void draw(int texID, int x, int y, int width, int height, double rotate, SDL_Point* center);
 
-    void drawVelVector(int x, int y, Vect* vel);
+  void drawVelVector(int x, int y, Vect* vel);
+  void drawAccelVector(int x, int y, Vect* accel);
 
 
 private:

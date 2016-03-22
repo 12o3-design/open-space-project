@@ -39,7 +39,13 @@ void Player::rotateRight(int rate)
 
 void Player::draw()
 {
+  // draws ship
   drawComponent_->draw(texID_, playerPhys->getX(), playerPhys->getY(), 80, 80, playerPhys->getTheta(), NULL);
+
+  // draws vel vector
   drawComponent_->drawVelVector(playerPhys->getX(), playerPhys->getY(), playerPhys->getVelocity());
+
+  // draws accel vector
+  drawComponent_->drawAccelVector(playerPhys->getX(), playerPhys->getY(), playerPhys->getAccel());
 
 }

@@ -91,3 +91,13 @@ void DrawComponent::drawVelVector(int x, int y, Vect* vel)
   SDL_RenderDrawLine(renderer_, x, y, (x + xScale), (y + yScale) );
   SDL_SetRenderDrawColor(renderer_, 0x00, 0x00, 0x00, 0xFF);
 }
+
+void DrawComponent::drawAccelVector(int x, int y, Vect* accel)
+{
+  int scale = 100;
+  double xScale = scale * accel->xComp;
+  double yScale = scale * accel->yComp;
+  SDL_SetRenderDrawColor(renderer_, 0x00, 0x00, 0xFF, 0xFF);
+  SDL_RenderDrawLine(renderer_, x, y, (x + xScale), (y + yScale));
+  SDL_SetRenderDrawColor(renderer_, 0x00, 0x00, 0x00, 0xFF);
+}
