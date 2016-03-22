@@ -40,4 +40,6 @@ void Player::rotateRight(int rate)
 void Player::draw()
 {
   drawComponent_->draw(texID_, playerPhys->getX(), playerPhys->getY(), 80, 80, playerPhys->getTheta(), NULL);
+  drawComponent_->drawVelVector(playerPhys->getX(), playerPhys->getY(), playerPhys->getVelocity());
+
 }

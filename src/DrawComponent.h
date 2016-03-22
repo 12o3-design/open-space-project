@@ -4,6 +4,7 @@
 #include <string>
 
 #include <SDL2/SDL.h>
+#include "Vect.h"
 
 #ifdef __APPLE__
 #include <SDL2_image/SDL_image.h>
@@ -19,6 +20,8 @@ public:
 
   int load(std::string texName);
   void draw(int texID, int x, int y, int width, int height, double rotate, SDL_Point* center);
+
+    void drawVelVector(int x, int y, Vect* vel);
 
 
 private:

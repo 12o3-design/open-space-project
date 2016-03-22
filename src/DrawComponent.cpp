@@ -1,4 +1,5 @@
 #include "DrawComponent.h"
+#include "Vect.h"
 
 bool DrawComponent::inst_ = false;
 
@@ -78,4 +79,12 @@ void DrawComponent::draw(int texID, int x, int y, int width, int height, double 
   {
   //  printf("Texture not present\n");
   }
+}
+
+void DrawComponent::drawVelVector(int x, int y, Vect* vel)
+{
+  int scale = 1;
+  SDL_SetRenderDrawColor(renderer_, 0xFF, 0x00, 0x00, 0xFF);
+  SDL_RenderDrawLine(renderer_, x, y, (x + vel->xComp) * scale, (y + vel->yComp) * scale);
+  SDL_SetRenderDrawColor(renderer_, 0x00, 0x00, 0x00, 0xFF);
 }

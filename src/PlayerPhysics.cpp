@@ -1,4 +1,5 @@
 #include "PlayerPhysics.h"
+#include <SDL2/SDL.h>
 #include <math.h>
 #define PI 3.1415926535897
 
