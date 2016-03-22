@@ -15,9 +15,9 @@ public:
 
 
 // game behaviors
-  virtual void accelerate(double rate) =0;
-  virtual void rotateLeft(int rate) =0;
-  virtual void rotateRight(int rate) =0;
+  virtual void accelerate(double rate) {}
+  virtual void rotateLeft(int rate) {}
+  virtual void rotateRight(int rate) {}
 
 private:
   int entityID_;
