@@ -20,6 +20,7 @@ public:
   void setVelocity(double xComp, double yComp);
   void setAccel(Vect accel) { this->accel = accel; }
   void setAccel(double xComp, double yComp);
+  void setAccel(int accelRate);
   void setRotate(int rotate) { this->rotateRate = rotate; }
 
   Vect* getVelocity() { return &velocity; }

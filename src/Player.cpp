@@ -27,18 +27,9 @@ void Player::update()
 
 void Player::accelerate(double rate)
 {
-  if (rate == 0)
-  {
-    playerPhys->setAccel(0,0);
-  }
-  Vect* newAccel = new Vect();
-  double theta = playerPhys->getTheta();
-  newAccel->xComp = rate * (sin(theta * (PI/180)));
-  newAccel->yComp = rate * (cos(theta * (PI/180))) * -1;
+  int theta = playerPhys->getTheta();
+  playerPhys->setAccel(rate * (sin(theta * (PI/180))), rate * (cos(theta * (PI/180))) * -1);
 
-  playerPhys->setAccel(vectorSum(newAccel, playerPhys->getAccel()));
-
-  delete newAccel;
 }
 
 void Player::rotateLeft(int rate)

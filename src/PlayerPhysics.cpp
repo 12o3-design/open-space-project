@@ -38,6 +38,11 @@ void PlayerPhysics::setAccel(double xComp, double yComp)
   accel.yComp = yComp;
 }
 
+void PlayerPhysics::setAccel(int accelRate)
+{
+
+}
+
 void PlayerPhysics::update()
 {
   // on each update step,velocity increases by accel
@@ -66,17 +71,14 @@ void PlayerPhysics::update()
     y = y + 800;
   }
   // on each update step, rotate by rotate rotateRate
+  theta = (theta + rotateRate);
 
-  if (theta + rotateRate > 359)
+  if (theta  > 359)
   {
-    theta = (theta + rotateRate - 360);
+    theta = (theta - 360);
   }
-  else if (theta + rotateRate < 0)
+  if (theta  < 0)
   {
-    theta = (theta + rotateRate + 360);
-  }
-  else
-  {
-    theta = (theta + rotateRate);
+    theta = (theta + 360);
   }
 }
