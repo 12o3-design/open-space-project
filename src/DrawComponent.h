@@ -5,6 +5,7 @@
 
 #include <SDL2/SDL.h>
 #include "Vect.h"
+#include "Color.h"
 
 #ifdef __APPLE__
 #include <SDL2_image/SDL_image.h>
@@ -19,7 +20,9 @@ public:
   ~DrawComponent();
 
   int load(std::string texName);
+  // overloaded draw function for planets and sprites
   void draw(int texID, int x, int y, int width, int height, double rotate, SDL_Point* center);
+  void draw(int x, int y, int radius, Color color);
 
   void drawVelVector(int x, int y, Vect* vel);
   void drawAccelVector(int x, int y, Vect* accel);

@@ -20,6 +20,7 @@ void Player::setup()
 void Player::update()
 {
  playerPhys->update();
+ 
 }
 
 void Player::accelerate(double rate)

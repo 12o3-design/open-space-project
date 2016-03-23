@@ -82,6 +82,13 @@ void DrawComponent::draw(int texID, int x, int y, int width, int height, double 
   }
 }
 
+void DrawComponent::draw(int x, int y, int radius, Color* color)
+{
+  // draws planets by making a circle of radius and color
+  SDL_SetRenderDrawColor(renderer_, color->red, color->green, color->blue, color->alpha);
+
+}
+
 void DrawComponent::drawVelVector(int x, int y, Vect* vel)
 {
   int scale = 4;

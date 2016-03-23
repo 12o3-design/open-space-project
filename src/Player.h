@@ -28,8 +28,6 @@ public:
   virtual void rotateRight(int rate);
 
 private:
-  DrawComponent* drawComponent_;
-
   PlayerPhysics* playerPhys;
 
   std::string texName_ = "../assets/player.png";
